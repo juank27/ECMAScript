@@ -1,0 +1,19 @@
+{
+  "name": "ecmascript",
+  "version": "1.0.0",
+  "description": "Aprendiendo EcmaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juank27/ECMAScript.git"
+  },
+  "author": "juank27",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juank27/ECMAScript/issues"
+  },
+  "homepage": "https://github.com/juank27/ECMAScript#readme"
+}
