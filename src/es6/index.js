@@ -1,3 +1,5 @@
+//link de notas en Notion.
+//https://majestic-client-9f3.notion.site/ECMAScript-6-086011f9a1254ec98618e3101c0d780c
 //Default Params y Concatenación
 function newFunction(name, age, country) {
 	var name = name || 'oscar';
@@ -78,3 +80,105 @@ console.log(globalVar); //puede ser llamado fuera del scop
 
 //Const
 const	a = 'b';
+
+//Arrow Functions, Promesas y Parámetros en objetos
+//Parametros a objetos
+let nombree = 'Juan';
+let edad = 21;
+//antes
+obj = { name: nombree, age: edad };
+//ahora
+obj2 = { nombree, edad };
+console.log(obj2); //-> { nombree: 'Juan', edad: 21 }
+
+//Arrow Functions
+const names = [
+	{ name: 'juan', age : 21 },
+	{ name: 'Carlos', age: 22 }
+]
+//como se recorria antes
+let listOfNames = names.map(function (item) {
+	console.log(item.age);
+	console.log(item.name);
+})
+//como funciona ahora e6
+let listOfNames2 = names.map(item =>console.log(item.name)); //-> juan \n Carlos
+
+//Función tradicional
+function nombre(parámetros) {
+	return (valorRetornado)
+}
+//Función flecha
+const nombre = (parámetros) => {
+	return (valorRetornado)
+}
+//cuando tiene un solo parametro
+const porDos = num => num * 2
+
+//Retorno implícito
+//se puede omitir la palabra reservada return
+//Función tradicional
+function suma(num1, num2) {
+	return num1 + num2
+}
+//Función flecha
+const suma = (num1, num2) => num1 + num2
+//si se requieren mas lineas
+const suma = (num1, num2) => (
+	num1 + num2
+)
+
+//Promesas
+const helloPromise = ()=>{
+	//retornar una nueva promesa
+	return new Promise((resolve, reject) =>{
+		if (true) {
+			resolve('hey!!'); //Funciono
+		}else{
+			reject('upss!!');// No funciono
+		}
+	})
+}
+//hacer llamado a la promesa
+helloPromise()
+	.then(response => console.log(response))//respuesta verdadera
+	.then(() => console.log('hola')) //se pueden anidar yhen cuantas veces sea necesario
+	.catch(error => console.log(error)); // captura el error - o no ejecucion.
+
+//Clases, Módulos y Generadores
+//clases
+class calculator{
+	constructor(){
+		this.valueA = 0;
+		this.valueB = 0;
+	}
+	sum(valueA, valueB){
+		//asignacion de variables al constructor
+		this.valueA = valueA;
+		this.valueB = valueB
+		return this.valueA + this.valueB;
+	}
+}
+//llamada del metodo y crecion de un objeto.
+const calc = new calculator();
+console.log(calc.sum(2,2));
+
+//Modulos
+//importar el modulo
+import { hello } from './module.js';
+console.log(hello());
+
+//generadores
+function * helloWorld() {
+	if (true) {
+		yield 'hello!';
+	}
+	if (true) {
+		yield 'world';
+	}
+}
+//ejecucion
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
