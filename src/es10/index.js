@@ -15,6 +15,9 @@ console.log(hello.trimStart()); //-> hello world
 let hello2 = 'hello world   ';
 console.log(hello2);//-> 'hello world   '
 console.log(hello2.trimEnd()); //-> hello world
+//trim
+let helloo = "    Hello world    "
+console.log(helloo.trim()); //-> 'Hello world'
 
 //try catch y el manejo de error
 //antes
